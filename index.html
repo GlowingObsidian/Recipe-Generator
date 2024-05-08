@@ -12,14 +12,40 @@
             font-family: "Nunito", sans-serif;
         }
 
+        #data-for-prompt {
+            background: rgba(255, 255, 255, 0.28);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
         .recipe-name {
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            border: 1px solid;
-            border-radius: 5px;
-            height: 100px
+            height: 100px;
+            background: rgba(255, 255, 255, 0.28);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        #output {
+            color: white;
+            background: rgba(255, 255, 255, 0.28);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
     </style>
@@ -28,8 +54,8 @@
 
 <body>
     <div class="container" id="main">
-        <div class="container" id="data-for-prompt">
-            <p class="display-5 mt-3">Tell me the following: </p>
+        <div class="container mt-5 p-2" id="data-for-prompt">
+            <p class="display-5 mt-3">Tell me, what is your- </p>
             <input type="text" class="form-control mt-2" id="ingredient1" placeholder="First ingredient"
                 autocomplete="off">
             <input type="text" class="form-control mt-2" id="ingredient2" placeholder="Second ingredient"
@@ -42,9 +68,9 @@
             <button class="mt-2 btn btn-primary mx-auto d-block" id="dataSubmitButton">Make a recipe for me!</button>
         </div>
         <img src="frying-pan.gif" class="img-fluid mx-auto d-none" alt="" srcset="" id="loader">
-        <div class="mt-3" id="output" style="display: none;">
-            <div class="row" id="recipe-names"></div>
-            <p class="text-center display-4" id="title"></p>
+        <div class="row m-2 p-1 justify-content-center" id="recipe-names"></div>
+        <div class="my-3 p-3" id="output" style="display: none;">
+            <p class="text-center display-1 fw-bold" id="title"></p>
             <p class="fw-bold h2">Ingredients:</p>
             <ol id="ingredients"></ol>
             <p class="fw-bold h2">Preparation instructions:</p>

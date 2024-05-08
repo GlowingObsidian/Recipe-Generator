@@ -85,10 +85,15 @@ async function getRecipes() {
 }
 
 function injectDishNames(recipes) {
-  const items = recipes.recommendations.length;
+  let num_recipes = recipes.recommendations.length;
+
+  document.getElementsByTagName("body")[0].style.background =
+    "linear-gradient(0deg, rgba(234, 141, 141, 1) 0%, rgba(168, 144, 254, 1) 100%)";
 
   recipes.recommendations.forEach((recipe) => {
-    recipeNames.innerHTML += `<p class="recipe-name col m-2">${recipe.title}</p>`;
+    recipeNames.innerHTML += `<p class="recipe-name col-${
+      12 / num_recipes - 1
+    } m-2">${recipe.title}</p>`;
   });
 
   injectData(recipes.recommendations[0]);
@@ -97,6 +102,7 @@ function injectDishNames(recipes) {
 
   for (let i = 0; i < recipe_name_boxes.length; i++) {
     recipe_name_boxes[i].addEventListener("click", () => {
+      resetWindow();
       injectData(recipes.recommendations[i]);
     });
   }
