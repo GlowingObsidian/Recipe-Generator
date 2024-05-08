@@ -11,6 +11,16 @@
         body {
             font-family: "Nunito", sans-serif;
         }
+
+        .recipe-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid;
+            border-radius: 5px;
+            height: 100px
+        }
     </style>
     </style>
     <title>Document</title>
@@ -20,15 +30,20 @@
     <div class="container" id="main">
         <div class="container" id="data-for-prompt">
             <p class="display-5 mt-3">Tell me the following: </p>
-            <input type="text" class="form-control mt-2" id="ingredient1" placeholder="First ingredient">
-            <input type="text" class="form-control mt-2" id="ingredient2" placeholder="Second ingredient">
-            <input type="text" class="form-control mt-2" id="ingredient3" placeholder="Third ingredient">
-            <input type="text" class="form-control mt-2" id="allergy" placeholder="Dietary restriction">
-            <input type="text" class="form-control mt-2" id="cuisine" placeholder="Cuisine">
+            <input type="text" class="form-control mt-2" id="ingredient1" placeholder="First ingredient"
+                autocomplete="off">
+            <input type="text" class="form-control mt-2" id="ingredient2" placeholder="Second ingredient"
+                autocomplete="off">
+            <input type="text" class="form-control mt-2" id="ingredient3" placeholder="Third ingredient"
+                autocomplete="off">
+            <input type="text" class="form-control mt-2" id="allergy" placeholder="Dietary restriction"
+                autocomplete="off">
+            <input type="text" class="form-control mt-2" id="cuisine" placeholder="Cuisine" autocomplete="off">
             <button class="mt-2 btn btn-primary mx-auto d-block" id="dataSubmitButton">Make a recipe for me!</button>
         </div>
         <img src="frying-pan.gif" class="img-fluid mx-auto d-none" alt="" srcset="" id="loader">
-        <div id="output" style="display: none;">
+        <div class="mt-3" id="output" style="display: none;">
+            <div class="row" id="recipe-names"></div>
             <p class="text-center display-4" id="title"></p>
             <p class="fw-bold h2">Ingredients:</p>
             <ol id="ingredients"></ol>
