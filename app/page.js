@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useMutation } from "react-query";
 import Image from "next/image";
 import axios from "axios";
+import RecipeCard from "@/components/RecipeCard";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -109,13 +110,7 @@ const Index = () => {
       {data && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
           {data.recommendations.map((recipe, index) => (
-            <div
-              key={index}
-              className="p-5 bg-white shadow-md rounded-md cursor-pointer"
-            >
-              <p className="text-xl font-semibold mb-2">{recipe.title}</p>
-              <p className="text-sm">{recipe.ingredients.join(", ")}</p>
-            </div>
+            <RecipeCard key={index} recipe={{ ...recipe, id: index }} />
           ))}
         </div>
       )}
