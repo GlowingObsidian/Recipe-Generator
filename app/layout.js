@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ReactQueryProvider from "@/components/providers/ReactQueryClientProvider";
+import NextAuthProvider from "@/components/providers/NextAuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,10 +12,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ReactQueryProvider>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    </ReactQueryProvider>
+    <NextAuthProvider>
+      <ReactQueryProvider>
+        <html lang="en">
+          <body className={inter.className}>{children}</body>
+        </html>
+      </ReactQueryProvider>
+    </NextAuthProvider>
   );
 }
